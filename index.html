@@ -1196,7 +1196,35 @@
       ctx.fillText('🎲', radius, radius);
     }
 
+    // --- Anti-Cheat / Spin Only Once Logic ---
+    const STORAGE_KEY = 'cumple_mario_winner_activity';
+    let hasSpun = false;
+
+    // Check if Mario already spun the wheel
+    const savedSpin = localStorage.getItem(STORAGE_KEY);
+    if (savedSpin !== null) {
+      hasSpun = true;
+      const savedIndex = parseInt(savedSpin);
+      if (!isNaN(savedIndex) && savedIndex >= 0 && savedIndex < numSlices) {
+        // Orient wheel to show the activity he won
+        currentAngle = 1.5 * Math.PI - (savedIndex * arc + arc / 2);
+      }
+    }
+
+    function updateButtonIfSpun() {
+      if (hasSpun) {
+        const btn = document.getElementById('btnSpin');
+        if (btn) {
+          btn.textContent = '🔒 ¡Destino Sellado! (Ver Premio)';
+          btn.style.background = 'linear-gradient(135deg, #475569 0%, #334155 100%)';
+          btn.style.color = '#cbd5e1';
+          btn.style.boxShadow = 'none';
+        }
+      }
+    }
+
     drawWheel();
+    updateButtonIfSpun();
 
     // --- Web Audio SFX for Wheel & Clicks ---
     let audioCtx;
@@ -1245,8 +1273,16 @@
       } catch (e) {}
     }
 
-    // --- Spin Wheel Functionality ---
+    // --- Spin Wheel Functionality (ONLY ONCE) ---
     function spinWheel() {
+      if (hasSpun) {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved !== null) {
+          showResult(parseInt(saved));
+        }
+        return;
+      }
+
       if (isSpinning) return;
       isSpinning = true;
       document.getElementById('btnSpin').disabled = true;
@@ -1280,7 +1316,10 @@
           requestAnimationFrame(animateSpin);
         } else {
           isSpinning = false;
-          document.getElementById('btnSpin').disabled = false;
+          hasSpun = true;
+          // Persist winner in localStorage to prevent cheating
+          localStorage.setItem(STORAGE_KEY, winnerIndex);
+          updateButtonIfSpun();
           showResult(winnerIndex);
         }
       }
