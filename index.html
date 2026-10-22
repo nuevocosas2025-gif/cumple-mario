@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>¡Feliz Cumpleaños Mario! 🎉 (o Mateo...)</title>
+  <title>¡Feliz Cumpleaños Mario! 🎉 (Ma-teo)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
   <style>
     :root {
       --bg-dark: #0b0d17;
-      --bg-card: rgba(22, 27, 46, 0.85);
+      --bg-card: rgba(22, 27, 46, 0.88);
       --wanda-red: #ff2a55;
       --wanda-glow: rgba(255, 42, 85, 0.45);
       --slayer-green: #00e5a3;
@@ -35,8 +35,8 @@
     body {
       background-color: var(--bg-dark);
       background-image: 
-        radial-gradient(circle at 15% 20%, rgba(255, 42, 85, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(0, 229, 163, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 15% 20%, rgba(255, 42, 85, 0.14) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(0, 229, 163, 0.12) 0%, transparent 40%),
         radial-gradient(circle at 50% 50%, rgba(255, 190, 59, 0.05) 0%, transparent 60%);
       color: var(--text-main);
       font-family: var(--font-main);
@@ -108,15 +108,15 @@
       background: rgba(255, 42, 85, 0.15);
       border: 1px solid var(--wanda-red);
       color: #ff859e;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
     .audio-toggle-btn:hover, .audio-toggle-btn.playing {
@@ -126,10 +126,50 @@
       box-shadow: 0 0 20px var(--wanda-red);
     }
 
+    /* Demon Slayer Stickers */
+    .anime-sticker {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 229, 163, 0.4);
+      object-fit: cover;
+      position: absolute;
+      z-index: 15;
+      animation: stickerBob 3s ease-in-out infinite alternate;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .anime-sticker:hover {
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    @keyframes stickerBob {
+      0% { transform: translateY(0px) rotate(-3deg); }
+      100% { transform: translateY(-7px) rotate(4deg); }
+    }
+
+    .sticker-tanjiro {
+      top: -20px;
+      right: -10px;
+    }
+
+    .sticker-nezuko {
+      bottom: -15px;
+      right: 15px;
+    }
+
+    .sticker-rengoku {
+      top: -20px;
+      left: -10px;
+    }
+
     /* Hero Section */
     .hero {
       text-align: center;
       padding: 1.5rem 0 2.5rem 0;
+      position: relative;
     }
 
     .hero-pretitle {
@@ -153,7 +193,7 @@
     }
 
     .hero-alias {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       color: #ffd074;
       font-family: var(--font-hand);
       transform: rotate(-2deg);
@@ -212,12 +252,11 @@
       border: 1px solid rgba(255, 255, 255, 0.09);
       border-radius: 20px;
       padding: 1.5rem;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2rem;
       backdrop-filter: blur(12px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
       transition: transform 0.3s ease, border-color 0.3s ease;
       position: relative;
-      overflow: hidden;
     }
 
     .card:hover {
@@ -280,15 +319,15 @@
 
     /* Damas Matchup Card */
     .matchup-box {
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.45);
       border-radius: 14px;
       padding: 1rem;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       text-align: center;
-      margin: 1rem 0;
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      margin: 1.2rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .matchup-player {
@@ -298,26 +337,35 @@
     }
 
     .player-name {
-      font-size: 0.9rem;
-      font-weight: 700;
+      font-size: 1.05rem;
+      font-weight: 800;
     }
 
     .player-title {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
     }
 
     .player-score {
-      font-size: 1.7rem;
+      font-size: 2rem;
       font-weight: 900;
+      line-height: 1;
+      margin-top: 0.3rem;
+    }
+
+    .score-mario {
+      color: #ff859e;
+    }
+
+    .score-heiner {
       color: var(--slayer-green);
     }
 
     .vs-badge {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 900;
       background: rgba(255, 255, 255, 0.1);
-      padding: 0.3rem 0.6rem;
+      padding: 0.35rem 0.7rem;
       border-radius: 8px;
       color: var(--text-muted);
     }
@@ -371,13 +419,13 @@
     .polaroid-caption {
       font-family: var(--font-hand);
       color: #1e293b;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 700;
       text-align: center;
       margin-top: 0.6rem;
     }
 
-    /* WhatsApp Audio Player */
+    /* WhatsApp Voice Note Audio Player (NO VIDEO) */
     .wa-player {
       background: #121b22;
       border: 1px solid #1f2c34;
@@ -427,7 +475,7 @@
       align-items: center;
       gap: 1rem;
       background: rgba(255, 255, 255, 0.04);
-      padding: 0.6rem 0.9rem;
+      padding: 0.7rem 0.9rem;
       border-radius: 12px;
     }
 
@@ -478,35 +526,6 @@
       color: #8696a0;
       min-width: 42px;
       text-align: right;
-    }
-
-    .video-toggle-container {
-      margin-top: 0.5rem;
-      text-align: center;
-    }
-
-    .btn-toggle-video {
-      background: none;
-      border: 1px dashed rgba(255, 255, 255, 0.2);
-      color: var(--text-muted);
-      padding: 0.4rem 0.8rem;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      cursor: pointer;
-    }
-
-    .video-element-wrapper {
-      display: none;
-      margin-top: 0.8rem;
-      border-radius: 12px;
-      overflow: hidden;
-      background: black;
-    }
-
-    .video-element-wrapper video {
-      width: 100%;
-      max-height: 320px;
-      display: block;
     }
 
     /* Roulette Wheel Section */
@@ -633,13 +652,13 @@
       background: #25d366;
       color: white;
       text-decoration: none;
-      padding: 0.9rem 1.6rem;
+      padding: 0.95rem 1.8rem;
       border-radius: 50px;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.05rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       margin-top: 0.8rem;
       box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
       transition: all 0.2s;
@@ -689,7 +708,7 @@
     .letter-paper {
       background: #181d33;
       border-left: 4px solid var(--wanda-red);
-      padding: 1.4rem;
+      padding: 1.6rem 1.4rem;
       border-radius: 14px;
       font-size: 0.98rem;
       color: #e2e8f0;
@@ -706,48 +725,101 @@
       font-size: 1.6rem;
     }
 
-    .signature {
-      font-family: var(--font-hand);
+    .italian-birthday {
       font-size: 1.4rem;
+      font-weight: 800;
       color: var(--gold);
-      text-align: right;
-      margin-top: 1rem;
+      margin: 1.2rem 0 0.4rem 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 15px rgba(255, 190, 59, 0.4);
     }
 
-    /* Music Player card */
+    .signature {
+      font-family: var(--font-hand);
+      font-size: 1.5rem;
+      color: #ff859e;
+      text-align: right;
+      margin-top: 0.5rem;
+    }
+
+    /* Mon Laferte Real Player Card */
     .mon-player {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.1rem;
       background: rgba(255, 42, 85, 0.08);
-      border: 1px solid rgba(255, 42, 85, 0.2);
-      border-radius: 14px;
-      padding: 1rem;
-      margin-top: 1rem;
+      border: 1px solid rgba(255, 42, 85, 0.25);
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      margin-top: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mon-player:hover {
+      background: rgba(255, 42, 85, 0.14);
+      border-color: var(--wanda-red);
     }
 
     .mon-disc {
-      width: 50px;
-      height: 50px;
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       background: radial-gradient(circle, #333 30%, #111 70%, var(--wanda-red) 100%);
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       flex-shrink: 0;
-      animation: spinDisc 6s linear infinite;
+      animation: spinDisc 5s linear infinite;
       animation-play-state: paused;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
     .mon-disc.spinning {
       animation-play-state: running;
+      box-shadow: 0 0 20px rgba(255, 42, 85, 0.5);
     }
 
     @keyframes spinDisc {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
+    }
+
+    .mon-track-info {
+      flex: 1;
+    }
+
+    .mon-track-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #fff;
+    }
+
+    .mon-track-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .mon-play-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--wanda-red);
+      border: none;
+      color: white;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .mon-play-btn:hover {
+      transform: scale(1.1);
     }
 
     .footer {
@@ -762,12 +834,17 @@
       .hero-title { font-size: 2.2rem; }
       .wheel-wrapper { width: 270px; height: 270px; }
       .container { padding-left: 1rem; padding-right: 1rem; }
+      .anime-sticker { width: 62px; height: 62px; }
     }
   </style>
 </head>
 <body>
 
   <div class="magic-aura"></div>
+
+  <!-- Audio Elements (Pure audio, NO VIDEO) -->
+  <audio id="marioMedia" src="assets/audio/mario_audio.mp4" preload="metadata"></audio>
+  <audio id="monAudio" src="assets/audio/mon_laferte.m4a" preload="auto"></audio>
 
   <div class="container">
     
@@ -777,21 +854,24 @@
         <span>🩺</span>
         <span>Mario &bull; 23 Años</span>
       </div>
-      <button class="audio-toggle-btn" id="btnBgmToggle" title="Música de fondo" onclick="toggleBackgroundMusic()">
+      <button class="audio-toggle-btn" id="btnBgmToggle" title="Escuchar Mon Laferte" onclick="toggleMonMusic()">
         🎵
       </button>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
+      <!-- Tanjiro Chibi Sticker -->
+      <img src="assets/anime/tanjiro.jpg" alt="Tanjiro Chibi" class="anime-sticker sticker-tanjiro" onclick="triggerConfetti()" title="¡Respiración del Cumpleañero!">
+
       <span class="hero-pretitle">Hoy a las 12:00 de la medianoche</span>
       <h1 class="hero-title">¡Feliz Cumpleaños, Mario!</h1>
-      <span class="hero-alias">(O debería decir... ¿Mateo? 😂)</span>
+      <span class="hero-alias">(O debería decir... ¿Ma-teo? 😂)</span>
 
       <div class="hero-tags">
         <span class="hero-tag">💉 El Enfermero Estrella</span>
-        <span class="hero-tag">⚔️ Respiración del Cumpleañero</span>
-        <span class="hero-tag">🔮 Hechicero del Multiverso Wanda</span>
+        <span class="hero-tag">⚔️ Respiración del Agua & Solar</span>
+        <span class="hero-tag">🔮 Hechicero de Wanda / Marvel</span>
         <span class="hero-tag">♟️ Maestro de las Damas</span>
       </div>
 
@@ -814,7 +894,7 @@
       </div>
 
       <p class="card-p">
-        Aunque hoy estés lejos de Jaén y no podamos celebrarlo en persona a las 12:00, no me olvido ni un segundo de ti.
+        Aunque hoy estés fuera de Jaén y no podamos celebrarlo en persona a las 12:00, no me olvido ni un segundo de ti.
       </p>
     </article>
 
@@ -829,25 +909,28 @@
 
       <div class="matchup-box">
         <div class="matchup-player">
-          <span class="player-name">Tú (Mario)</span>
-          <span class="player-title">"Entrenado para el Nacional"</span>
-          <span class="player-score" id="scoreMario">1</span>
+          <span class="player-name">Mario</span>
+          <span class="player-title">"El Seleccionado Nacional"</span>
+          <span class="player-score score-mario">2</span>
         </div>
         <div class="vs-badge">VS</div>
         <div class="matchup-player">
-          <span class="player-name">Yo ("El Niño")</span>
-          <span class="player-title">Modo Principiante</span>
-          <span class="player-score" id="scoreYo">3</span>
+          <span class="player-name">Heiner</span>
+          <span class="player-title">"El Niño"</span>
+          <span class="player-score score-heiner">1</span>
         </div>
       </div>
 
       <p class="card-p">
-        ¡Y al final te terminé ganando varias partidas, jejeje! 😌 Aunque admito que lo mejor de todo fue escucharte hablar con tanta pasión de Marvel, de Wanda y de todo el multiverso. <span class="highlight-gold">Ese día me culturizaste por completo</span>.
+        Ganaste 2 a 1, sí... ¡pero esa partida que te gané con honor como novato no me la quita nadie! 😏♟️ Y lo mejor de toda la tarde fue escucharte hablar con tanta pasión de Marvel, de Wanda y del multiverso. <span class="highlight-gold">Ese día me culturizaste por completo</span>.
       </p>
     </article>
 
     <!-- Card 3: Polaroids Gallery -->
     <article class="card card-accent-gold">
+      <!-- Nezuko Chibi Sticker -->
+      <img src="assets/anime/nezuko.jpg" alt="Nezuko Chibi" class="anime-sticker sticker-nezuko" onclick="triggerConfetti()" title="¡Nezuko te desea feliz cumple!">
+
       <h2 class="card-title">
         <span>📸</span> Recuerdos de un Chico Especial
       </h2>
@@ -883,13 +966,13 @@
       </div>
     </article>
 
-    <!-- Card 4: WhatsApp Audio Player -->
+    <!-- Card 4: WhatsApp Audio Player (AUDIO ONLY, NO VIDEO) -->
     <article class="card card-accent-wanda">
       <h2 class="card-title">
         <span>🎧</span> Tu Voz: El Audio que Siempre Escucho
       </h2>
       <p class="card-p">
-        Hay mensajes que no se borran y audios tuyos que siempre vuelvo a reproducir porque me sacan una sonrisa:
+        Hay mensajes que no se borran y audios tuyos que siempre vuelvo a reproducir porque me alegran el día:
       </p>
 
       <div class="wa-player">
@@ -897,7 +980,7 @@
           <div class="wa-avatar">M</div>
           <div class="wa-info">
             <div class="wa-sender">Mario (o Mateo) ❤️</div>
-            <div class="wa-status">Nota de voz especial &bull; Hoy</div>
+            <div class="wa-status">Nota de voz &bull; Hoy</div>
           </div>
           <span style="color:#53bdeb; font-size:1.1rem;" title="Leído">✓✓</span>
         </div>
@@ -907,7 +990,7 @@
             ▶
           </button>
           <div class="wa-waveform" id="waWaveform" onclick="seekMarioAudio(event)">
-            <!-- 28 bars for realistic WhatsApp waveform -->
+            <!-- 28 waveform bars -->
             <div class="wave-bar" style="height:12px;"></div>
             <div class="wave-bar" style="height:20px;"></div>
             <div class="wave-bar" style="height:15px;"></div>
@@ -939,21 +1022,14 @@
           </div>
           <div class="wa-time" id="waAudioTime">0:00</div>
         </div>
-
-        <div class="video-toggle-container">
-          <button class="btn-toggle-video" onclick="toggleVideoView()">
-            👁️ Ver reproductor completo / video
-          </button>
-        </div>
-
-        <div class="video-element-wrapper" id="videoWrapper">
-          <video id="marioMedia" src="assets/audio/mario_audio.mp4" playsinline preload="metadata" controls></video>
-        </div>
       </div>
     </article>
 
     <!-- Card 5: Roulette Activity Picker -->
     <article class="card card-accent-gold">
+      <!-- Rengoku Chibi Sticker -->
+      <img src="assets/anime/rengoku.jpg" alt="Rengoku Chibi" class="anime-sticker sticker-rengoku" onclick="triggerConfetti()" title="¡Enciende tu corazón con la ruleta!">
+
       <h2 class="card-title">
         <span>🎡</span> Ruleta del Destino: Tu Regalo / Actividad
       </h2>
@@ -979,7 +1055,7 @@
         <span>🌹</span> Al Estilo Mon Laferte...
       </h2>
       <p class="card-p">
-        Para el fan #1 de Mon Laferte, que cura personas con su bata de enfermero y tiene el corazón más noble:
+        Para el fan #1 de Mon Laferte, que cuida y salva vidas con su bata de enfermero y tiene el corazón más noble:
       </p>
 
       <div class="letter-paper">
@@ -990,42 +1066,50 @@
         </p>
         <br>
         <p>
-          Cumples 23 años. Admiro tu fuerza, tu pasión por la enfermería, tus ocurrencias y esa manera tan única que tienes de hacerme sonreír (incluso mintiéndome sobre tu nombre al inicio jajaja).
+          Cumples 23 años. Admiro tu fuerza, tu vocación en la enfermería, tus ocurrencias y esa manera tan única que tienes de hacerme sonreír (incluso mintiéndome sobre tu nombre al inicio jajaja).
         </p>
         <br>
         <p>
-          Que este nuevo año de vida te traiga toda la felicidad que te mereces, éxitos profesionales y muchos momentos bonitos. ¡La revancha en las damas te está esperando!
+          Que este nuevo año de vida te traiga toda la felicidad que te mereces, éxitos y bendiciones. ¡La revancha en las damas te está esperando!
         </p>
+        
+        <!-- Italian Birthday Wish with MA-TEO -->
+        <div class="italian-birthday">
+          🇮🇹 ¡Buon Compleanno, Ma-teo! ❤️
+        </div>
+
         <div class="signature">
-          Con todo mi cariño, tu "niño" favorito ❤️
+          Con todo mi cariño, Heiner ("tu niño favorito") 💫
         </div>
       </div>
 
-      <div class="mon-player">
+      <!-- Real Mon Laferte Player -->
+      <div class="mon-player" onclick="toggleMonMusic()">
         <div class="mon-disc" id="monDisc">💿</div>
-        <div>
-          <div style="font-weight:700; font-size:0.95rem;">Mon Laferte &bull; Playlist Dedicada</div>
-          <div style="font-size:0.8rem; color:var(--text-muted);">"Mi buen amor..." para escuchar hoy a medianoche</div>
+        <div class="mon-track-info">
+          <div class="mon-track-title">Mon Laferte &bull; Mi Buen Amor</div>
+          <div class="mon-track-sub" id="monTrackStatus">Toca para escuchar la canción 🎶</div>
         </div>
+        <button class="mon-play-btn" id="btnMonPlay">▶</button>
       </div>
     </article>
 
     <!-- Footer -->
     <footer class="footer">
-      <p>Hecho con todo el corazón especialmente para Mario 🎂</p>
-      <p style="font-size: 0.75rem; margin-top: 0.3rem; opacity: 0.7;">22 de Octubre &bull; Feliz Cumpleaños #23</p>
+      <p>Hecho con todo el corazón por Heiner para Mario 🎂</p>
+      <p style="font-size: 0.75rem; margin-top: 0.3rem; opacity: 0.7;">22 de Octubre &bull; ¡Buon Compleanno, Ma-teo!</p>
     </footer>
 
   </div>
 
-  <!-- Modal for Roulette Result -->
+  <!-- Modal for Roulette Result (Direct to WhatsApp +51 927 873 842) -->
   <div class="modal-overlay" id="resultModal">
     <div class="modal-box">
       <div class="modal-icon" id="modalIcon">🎉</div>
-      <h3 style="color:var(--gold); font-size:1.1rem; text-transform:uppercase; letter-spacing:1px;">¡El Destino ha Hablado!</h3>
+      <h3 style="color:var(--gold); font-size:1.1rem; text-transform:uppercase; letter-spacing:1px;">¡EL DESTINO HA HABLADO!</h3>
       <div class="modal-activity" id="modalActivity">Actividad</div>
       <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:1rem;">
-        ¡Está sellado! Tómale captura o envíamelo directo a WhatsApp para agendarlo:
+        ¡Está sellado! Tómale captura o envíamelo directo a mi WhatsApp para agendarlo:
       </p>
       <a href="#" id="btnClaimWa" target="_blank" class="btn-wa-claim">
         <span>📲</span> Enviar por WhatsApp
@@ -1040,37 +1124,40 @@
   </div>
 
   <script>
+    // --- User WhatsApp Number (Heiner) ---
+    const HEINER_PHONE = "51927873842";
+
     // --- Activities Array ---
     const activities = [
       {
         text: "Una salida a jugar damas (la revancha)",
         icon: "♟️",
         color: "#ff2a55",
-        waText: "¡Giré la ruleta de mi cumple y me tocó: Una salida a jugar damas (la revancha para el campeón nacional)! ♟️😏 ¿Aceptas el reto?"
+        waText: "¡Hola Heiner! Giré la ruleta de mi regalo y me tocó: Una salida a jugar damas (¡la revancha para el campeón nacional Mario 2 vs Heiner 1)! ♟️😏 ¿Aceptas el reto?"
       },
       {
         text: "Salida al cine",
         icon: "🍿",
         color: "#00e5a3",
-        waText: "¡Giré la ruleta de mi cumple y me tocó: Salida al cine! 🍿🎬 ¿Qué película vemos?"
+        waText: "¡Hola Heiner! Giré la ruleta de mi regalo y me tocó: ¡Salida al cine juntos! 🍿🎬 ¿Qué película vemos?"
       },
       {
-        text: "Película con piqueos (¡con mashmelos!)",
+        text: "Salida a ver una película con piqueos incluidos (¡con mashmelos!)",
         icon: "🎬",
         color: "#ffbe3b",
-        waText: "¡Giré la ruleta de mi cumple y me tocó: Salida a ver una película con piqueos incluidos (¡y mashmelos!)! 😋🎬"
+        waText: "¡Hola Heiner! Giré la ruleta de mi regalo y me tocó: Salida a ver una película con piqueos incluidos (¡con mashmelos!) 😋🎬 ¡No te puedes negar!"
       },
       {
         text: "Un abrazo de 5 minutos",
         icon: "🫂",
         color: "#9d4edd",
-        waText: "¡Giré la ruleta de mi cumple y me tocó: Un abrazo de 5 minutos seguidos sin soltarse! 🫂❤️ ¡Reclamable apenas nos veamos!"
+        waText: "¡Hola Heiner! Giré la ruleta de mi regalo y me tocó: ¡Un abrazo de 5 minutos seguidos sin soltarse! 🫂❤️ ¡Reclamable apenas nos veamos!"
       },
       {
-        text: "Perdonar la mentira de tu nombre ('Hola, soy Mateo' 😂)",
+        text: "Perdonar la mentira del engaño por su nombre ('Hola, soy Mateo' 😂)",
         icon: "🤫",
         color: "#00b4d8",
-        waText: "¡Giré la ruleta de mi cumple y me tocó: Perdonar oficialmente la mentira del engaño por mi nombre ('Hola, soy Mateo' jajaja)! 😂😇 ¿Quedo libre de culpa?"
+        waText: "¡Hola Heiner! Giré la ruleta de mi regalo y me tocó: Perdonar oficialmente la mentira del engaño por mi nombre ('Hola, soy Mateo' jajaja) 😂😇 ¿Quedo libre de culpa?"
       }
     ];
 
@@ -1126,7 +1213,7 @@
 
     drawWheel();
 
-    // --- Web Audio SFX (Zero external audio dependency for effects!) ---
+    // --- Web Audio SFX for Wheel & Clicks ---
     let audioCtx;
     function getAudioContext() {
       if (!audioCtx) {
@@ -1155,7 +1242,7 @@
     function playCelebrationFanfare() {
       try {
         const ctx = getAudioContext();
-        const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+        const notes = [523.25, 659.25, 783.99, 1046.50];
         notes.forEach((freq, idx) => {
           setTimeout(() => {
             const osc = ctx.createOscillator();
@@ -1179,17 +1266,15 @@
       isSpinning = true;
       document.getElementById('btnSpin').disabled = true;
 
-      // Random winner index
       const winnerIndex = Math.floor(Math.random() * numSlices);
-      const spins = 5 + Math.floor(Math.random() * 3); // 5 to 7 full revolutions
+      const spins = 5 + Math.floor(Math.random() * 3);
       
-      // Target slice position aligned to top pointer (-90 deg or 1.5 * PI)
       const targetAngleOnCircle = 1.5 * Math.PI - (winnerIndex * arc + arc / 2);
       const totalRotation = spins * 2 * Math.PI + (targetAngleOnCircle - (currentAngle % (2 * Math.PI)));
       
       const startTime = performance.now();
       const startAngle = currentAngle;
-      const duration = 4000; // 4 seconds
+      const duration = 4000;
 
       let lastTickAngle = startAngle;
 
@@ -1197,12 +1282,10 @@
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
         
-        // Ease out cubic
         const easeOut = 1 - Math.pow(1 - progress, 3);
         currentAngle = startAngle + totalRotation * easeOut;
         drawWheel();
 
-        // Tick SFX every arc passing
         if (Math.abs(currentAngle - lastTickAngle) >= arc / 2) {
           playTickSound();
           lastTickAngle = currentAngle;
@@ -1228,7 +1311,8 @@
       document.getElementById('modalIcon').textContent = item.icon;
       document.getElementById('modalActivity').textContent = item.text;
 
-      const waUrl = "https://wa.me/?text=" + encodeURIComponent(item.waText);
+      // Direct WhatsApp link to Heiner (+51 927 873 842)
+      const waUrl = `https://wa.me/${HEINER_PHONE}?text=` + encodeURIComponent(item.waText);
       document.getElementById('btnClaimWa').href = waUrl;
 
       document.getElementById('resultModal').classList.add('active');
@@ -1242,29 +1326,26 @@
     function triggerCelebration() {
       playCelebrationFanfare();
       triggerConfetti();
-      // Increase Mario score playfully
-      const scoreMario = document.getElementById('scoreMario');
-      scoreMario.textContent = parseInt(scoreMario.textContent) + 1;
     }
 
     function triggerConfetti() {
       if (typeof confetti === 'function') {
         confetti({
-          particleCount: 100,
-          spread: 70,
+          particleCount: 110,
+          spread: 75,
           origin: { y: 0.6 },
           colors: ['#ff2a55', '#00e5a3', '#ffbe3b', '#ffffff']
         });
         setTimeout(() => {
           confetti({
-            particleCount: 50,
+            particleCount: 60,
             angle: 60,
             spread: 55,
             origin: { x: 0 },
             colors: ['#ff2a55', '#ffbe3b']
           });
           confetti({
-            particleCount: 50,
+            particleCount: 60,
             angle: 120,
             spread: 55,
             origin: { x: 1 },
@@ -1286,13 +1367,18 @@
       document.getElementById('lightbox').classList.remove('active');
     }
 
-    // --- Mario Media (WhatsApp Audio/Video) Controller ---
+    // --- Mario Media (Audio Only) ---
     const marioMedia = document.getElementById('marioMedia');
     const btnPlayWa = document.getElementById('btnPlayWa');
     const waAudioTime = document.getElementById('waAudioTime');
     const waveBars = document.querySelectorAll('.wave-bar');
 
     function toggleMarioAudio() {
+      // Pause Mon Laferte if playing
+      if (!monAudio.paused) {
+        pauseMonMusic();
+      }
+
       if (marioMedia.paused) {
         marioMedia.play();
         btnPlayWa.textContent = '❚❚';
@@ -1309,7 +1395,6 @@
       const secs = Math.floor(cur % 60).toString().padStart(2, '0');
       waAudioTime.textContent = `${mins}:${secs}`;
 
-      // Update Waveform animation
       const activeCount = Math.floor((cur / dur) * waveBars.length);
       waveBars.forEach((bar, idx) => {
         if (idx <= activeCount) {
@@ -1334,72 +1419,50 @@
       }
     }
 
-    function toggleVideoView() {
-      const wrapper = document.getElementById('videoWrapper');
-      if (wrapper.style.display === 'block') {
-        wrapper.style.display = 'none';
+    // --- Real Mon Laferte Audio Player ---
+    const monAudio = document.getElementById('monAudio');
+    const monDisc = document.getElementById('monDisc');
+    const btnMonPlay = document.getElementById('btnMonPlay');
+    const btnBgmToggle = document.getElementById('btnBgmToggle');
+    const monTrackStatus = document.getElementById('monTrackStatus');
+
+    function toggleMonMusic() {
+      // Pause Mario voice note if playing
+      if (!marioMedia.paused) {
+        marioMedia.pause();
+        btnPlayWa.textContent = '▶';
+      }
+
+      if (monAudio.paused) {
+        playMonMusic();
       } else {
-        wrapper.style.display = 'block';
+        pauseMonMusic();
       }
     }
 
-    // --- Background Ambient Melody (Synthesized Mon Laferte Style Soft Vibes) ---
-    let bgmOscillators = [];
-    let isBgmPlaying = false;
-    let bgmInterval;
-
-    function toggleBackgroundMusic() {
-      const btn = document.getElementById('btnBgmToggle');
-      const disc = document.getElementById('monDisc');
-      
-      if (isBgmPlaying) {
-        stopBgm();
-        btn.classList.remove('playing');
-        disc.classList.remove('spinning');
-        isBgmPlaying = false;
-      } else {
-        startBgm();
-        btn.classList.add('playing');
-        disc.classList.add('spinning');
-        isBgmPlaying = true;
-      }
+    function playMonMusic() {
+      monAudio.play().then(() => {
+        monDisc.classList.add('spinning');
+        btnMonPlay.textContent = '❚❚';
+        btnBgmToggle.classList.add('playing');
+        monTrackStatus.textContent = 'Reproduciendo "Mi Buen Amor" 🎵';
+        triggerConfetti();
+      }).catch(e => {
+        console.log("Audio play error:", e);
+      });
     }
 
-    function startBgm() {
-      const ctx = getAudioContext();
-      // Gentle romantic arpeggios
-      const chordNotes = [
-        [261.63, 329.63, 392.00], // C
-        [220.00, 261.63, 329.63], // Am
-        [174.61, 220.00, 261.63], // F
-        [196.00, 246.94, 293.66]  // G
-      ];
-      let step = 0;
-
-      bgmInterval = setInterval(() => {
-        if (!isBgmPlaying) return;
-        const currentChord = chordNotes[Math.floor(step / 4) % chordNotes.length];
-        const note = currentChord[step % currentChord.length];
-        
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(note, ctx.currentTime);
-        gain.gain.setValueAtTime(0.08, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.6);
-        
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.start();
-        osc.stop(ctx.currentTime + 0.6);
-        
-        step++;
-      }, 400);
+    function pauseMonMusic() {
+      monAudio.pause();
+      monDisc.classList.remove('spinning');
+      btnMonPlay.textContent = '▶';
+      btnBgmToggle.classList.remove('playing');
+      monTrackStatus.textContent = 'Toca para escuchar la canción 🎶';
     }
 
-    function stopBgm() {
-      if (bgmInterval) clearInterval(bgmInterval);
-    }
+    monAudio.addEventListener('ended', () => {
+      pauseMonMusic();
+    });
   </script>
 </body>
 </html>
