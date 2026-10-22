@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>¡Feliz Cumpleaños Mario! 🎉 (Ma-teo)</title>
+  <title>¡Buon Compleanno, Ma-teo! 🎂</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
@@ -69,7 +69,7 @@
     .container {
       max-width: 640px;
       margin: 0 auto;
-      padding: 1.5rem 1.2rem 5rem 1.2rem;
+      padding: 1.5rem 1.2rem 4rem 1.2rem;
       position: relative;
       z-index: 10;
     }
@@ -317,11 +317,11 @@
       color: #ffe6aa;
     }
 
-    /* Damas Matchup Card */
+    /* Damas Matchup Card (NO LABELS UNDER NAMES) */
     .matchup-box {
       background: rgba(0, 0, 0, 0.45);
       border-radius: 14px;
-      padding: 1rem;
+      padding: 1.2rem 1rem;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
@@ -333,24 +333,21 @@
     .matchup-player {
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      align-items: center;
+      justify-content: center;
     }
 
     .player-name {
-      font-size: 1.05rem;
+      font-size: 1.2rem;
       font-weight: 800;
-    }
-
-    .player-title {
-      font-size: 0.75rem;
-      color: var(--text-muted);
+      color: #ffffff;
+      margin-bottom: 0.2rem;
     }
 
     .player-score {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 900;
       line-height: 1;
-      margin-top: 0.3rem;
     }
 
     .score-mario {
@@ -362,10 +359,10 @@
     }
 
     .vs-badge {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 900;
       background: rgba(255, 255, 255, 0.1);
-      padding: 0.35rem 0.7rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 8px;
       color: var(--text-muted);
     }
@@ -409,11 +406,17 @@
 
     .polaroid img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
+      object-position: top center; /* Focus on face! */
       border-radius: 3px;
       display: block;
       background: #111;
+    }
+
+    /* Specific focus for photo 2 so his full face and smile are seen */
+    .img-face-top {
+      object-position: center 8% !important;
     }
 
     .polaroid-caption {
@@ -425,7 +428,7 @@
       margin-top: 0.6rem;
     }
 
-    /* WhatsApp Voice Note Audio Player (NO VIDEO) */
+    /* WhatsApp Voice Note Audio Player (AUDIO ONLY, NO VIDEO) */
     .wa-player {
       background: #121b22;
       border: 1px solid #1f2c34;
@@ -700,6 +703,7 @@
     .lightbox-img {
       max-width: 90vw;
       max-height: 80vh;
+      object-fit: contain;
       border-radius: 12px;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
     }
@@ -723,24 +727,6 @@
       top: -12px;
       right: 14px;
       font-size: 1.6rem;
-    }
-
-    .italian-birthday {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--gold);
-      margin: 1.2rem 0 0.4rem 0;
-      text-align: center;
-      letter-spacing: 0.5px;
-      text-shadow: 0 0 15px rgba(255, 190, 59, 0.4);
-    }
-
-    .signature {
-      font-family: var(--font-hand);
-      font-size: 1.5rem;
-      color: #ff859e;
-      text-align: right;
-      margin-top: 0.5rem;
     }
 
     /* Mon Laferte Real Player Card */
@@ -822,11 +808,19 @@
       transform: scale(1.1);
     }
 
-    .footer {
+    /* Final Birthday Wish - Clean & Minimal */
+    .final-wish-section {
       text-align: center;
       padding-top: 2.5rem;
-      color: var(--text-muted);
-      font-size: 0.85rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .final-wish-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 20px rgba(255, 190, 59, 0.5);
     }
 
     /* Responsive */
@@ -835,6 +829,7 @@
       .wheel-wrapper { width: 270px; height: 270px; }
       .container { padding-left: 1rem; padding-right: 1rem; }
       .anime-sticker { width: 62px; height: 62px; }
+      .final-wish-text { font-size: 1.35rem; }
     }
   </style>
 </head>
@@ -898,31 +893,29 @@
       </p>
     </article>
 
-    <!-- Card 2: Damas & Marvel Culturization -->
+    <!-- Card 2: Damas & Marvel Culturization (NO LABELS UNDER NAMES) -->
     <article class="card card-accent-slayer">
       <h2 class="card-title">
         <span>♟️</span> La Gran Batalla de Damas & Marvel
       </h2>
       <p class="card-p">
-        Todavía tengo grabada nuestra última salida: me aseguraste muy confiado que <span class="highlight-green">habías sido entrenado para competir en torneos nacionales</span>...
+        Todavía tengo grabada nuestra última salida: me aseguraste muy confiado que habías sido entrenado para competir en torneos nacionales...
       </p>
 
       <div class="matchup-box">
         <div class="matchup-player">
           <span class="player-name">Mario</span>
-          <span class="player-title">"El Seleccionado Nacional"</span>
           <span class="player-score score-mario">2</span>
         </div>
         <div class="vs-badge">VS</div>
         <div class="matchup-player">
           <span class="player-name">Heiner</span>
-          <span class="player-title">"El Niño"</span>
           <span class="player-score score-heiner">1</span>
         </div>
       </div>
 
       <p class="card-p">
-        Ganaste 2 a 1, sí... ¡pero esa partida que te gané con honor como novato no me la quita nadie! 😏♟️ Y lo mejor de toda la tarde fue escucharte hablar con tanta pasión de Marvel, de Wanda y del multiverso. <span class="highlight-gold">Ese día me culturizaste por completo</span>.
+        Ganaste 2 a 1, sí... ¡pero esa partida que te gané como novato no me la quita nadie! 😏♟️ Y lo mejor de toda la tarde fue escucharte hablar con tanta pasión de Marvel, de Wanda y del multiverso. <span class="highlight-gold">Ese día me culturizaste por completo</span>.
       </p>
     </article>
 
@@ -939,34 +932,35 @@
       </p>
 
       <div class="gallery-grid">
-        <div class="polaroid" onclick="openLightbox('assets/photos/foto_1.jpeg', 'Esa sonrisa tuya ✨')">
+        <div class="polaroid" onclick="openLightbox('assets/photos/foto_1.jpeg')">
           <img src="assets/photos/foto_1.jpeg" alt="Mario Foto 1" loading="lazy">
           <div class="polaroid-caption">Esa sonrisa tuya ✨</div>
         </div>
 
-        <div class="polaroid" onclick="openLightbox('assets/photos/foto_2.jpeg', 'El enfermero estrella 🩺')">
-          <img src="assets/photos/foto_2.jpeg" alt="Mario Foto 2" loading="lazy">
+        <div class="polaroid" onclick="openLightbox('assets/photos/foto_2.jpeg')">
+          <!-- img-face-top ensures full face is completely framed and visible -->
+          <img src="assets/photos/foto_2.jpeg" alt="Mario Foto 2" class="img-face-top" loading="lazy">
           <div class="polaroid-caption">El enfermero estrella 🩺</div>
         </div>
 
-        <div class="polaroid" onclick="openLightbox('assets/photos/foto_3.jpeg', 'Mateo fingiendo seriedad 😂')">
+        <div class="polaroid" onclick="openLightbox('assets/photos/foto_3.jpeg')">
           <img src="assets/photos/foto_3.jpeg" alt="Mario Foto 3" loading="lazy">
           <div class="polaroid-caption">Fingiendo seriedad 😂</div>
         </div>
 
-        <div class="polaroid" onclick="openLightbox('assets/photos/foto_4.jpeg', 'Inolvidable 💫')">
+        <div class="polaroid" onclick="openLightbox('assets/photos/foto_4.jpeg')">
           <img src="assets/photos/foto_4.jpeg" alt="Mario Foto 4" loading="lazy">
           <div class="polaroid-caption">Inolvidable 💫</div>
         </div>
 
-        <div class="polaroid" onclick="openLightbox('assets/photos/foto_5.jpeg', 'Felices 23 años Mario ❤️')">
+        <div class="polaroid" onclick="openLightbox('assets/photos/foto_5.jpeg')">
           <img src="assets/photos/foto_5.jpeg" alt="Mario Foto 5" loading="lazy">
           <div class="polaroid-caption">¡Felices 23 años! ❤️</div>
         </div>
       </div>
     </article>
 
-    <!-- Card 4: WhatsApp Audio Player (AUDIO ONLY, NO VIDEO) -->
+    <!-- Card 4: WhatsApp Audio Player (AUDIO ONLY) -->
     <article class="card card-accent-wanda">
       <h2 class="card-title">
         <span>🎧</span> Tu Voz: El Audio que Siempre Escucho
@@ -1072,15 +1066,6 @@
         <p>
           Que este nuevo año de vida te traiga toda la felicidad que te mereces, éxitos y bendiciones. ¡La revancha en las damas te está esperando!
         </p>
-        
-        <!-- Italian Birthday Wish with MA-TEO -->
-        <div class="italian-birthday">
-          🇮🇹 ¡Buon Compleanno, Ma-teo! ❤️
-        </div>
-
-        <div class="signature">
-          Con todo mi cariño, Heiner ("tu niño favorito") 💫
-        </div>
       </div>
 
       <!-- Real Mon Laferte Player -->
@@ -1094,11 +1079,12 @@
       </div>
     </article>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>Hecho con todo el corazón por Heiner para Mario 🎂</p>
-      <p style="font-size: 0.75rem; margin-top: 0.3rem; opacity: 0.7;">22 de Octubre &bull; ¡Buon Compleanno, Ma-teo!</p>
-    </footer>
+    <!-- Final Part: ONLY ¡Buon Compleanno, Ma-teo! 🎂 -->
+    <div class="final-wish-section">
+      <div class="final-wish-text">
+        ¡Buon Compleanno, Ma-teo! 🎂
+      </div>
+    </div>
 
   </div>
 
@@ -1133,7 +1119,7 @@
         text: "Una salida a jugar damas (la revancha)",
         icon: "♟️",
         color: "#ff2a55",
-        waText: "¡Hola Heiner! Giré la ruleta de mi regalo y me tocó: Una salida a jugar damas (¡la revancha para el campeón nacional Mario 2 vs Heiner 1)! ♟️😏 ¿Aceptas el reto?"
+        waText: "¡Hola Heiner! Giré la ruleta de mi regalo y me tocó: Una salida a jugar damas (¡la revancha Mario 2 vs Heiner 1)! ♟️😏 ¿Aceptas el reto?"
       },
       {
         text: "Salida al cine",
@@ -1356,7 +1342,7 @@
     }
 
     // --- Lightbox ---
-    function openLightbox(src, caption) {
+    function openLightbox(src) {
       const lb = document.getElementById('lightbox');
       const img = document.getElementById('lightboxImg');
       img.src = src;
@@ -1374,7 +1360,6 @@
     const waveBars = document.querySelectorAll('.wave-bar');
 
     function toggleMarioAudio() {
-      // Pause Mon Laferte if playing
       if (!monAudio.paused) {
         pauseMonMusic();
       }
@@ -1427,7 +1412,6 @@
     const monTrackStatus = document.getElementById('monTrackStatus');
 
     function toggleMonMusic() {
-      // Pause Mario voice note if playing
       if (!marioMedia.paused) {
         marioMedia.pause();
         btnPlayWa.textContent = '▶';
