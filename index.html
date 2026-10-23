@@ -11,10 +11,12 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     :root {
-      --bg-dark: #0b0d17;
-      --bg-card: rgba(22, 27, 46, 0.9);
+      --bg-dark: #070913;
+      --bg-card: rgba(13, 19, 36, 0.88);
+      --spidey-red: #e62429;
+      --spidey-blue: #0077ff;
       --wanda-red: #ff2a55;
-      --wanda-glow: rgba(255, 42, 85, 0.45);
+      --wanda-glow: rgba(230, 36, 41, 0.45);
       --slayer-green: #00e5a3;
       --slayer-black: #1a1a24;
       --gold: #ffbe3b;
@@ -35,9 +37,11 @@
     body {
       background-color: var(--bg-dark);
       background-image: 
-        radial-gradient(circle at 15% 20%, rgba(255, 42, 85, 0.14) 0%, transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(0, 229, 163, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(255, 190, 59, 0.05) 0%, transparent 60%);
+        radial-gradient(circle at 15% 15%, rgba(230, 36, 41, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(0, 119, 255, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 50% 65%, rgba(230, 36, 41, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 90%, rgba(0, 119, 255, 0.14) 0%, transparent 45%),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0 L40 80 M0 40 L80 40 M0 0 L80 80 M80 0 L0 80' stroke='rgba(255%2C255%2C255%2C0.035)' stroke-width='1' fill='none'/%3E%3Cpolygon points='40%2C26 54%2C40 40%2C54 26%2C40' stroke='rgba(230%2C36%2C41%2C0.05)' stroke-width='1' fill='none'/%3E%3Cpolygon points='40%2C12 68%2C40 40%2C68 12%2C40' stroke='rgba(0%2C119%2C255%2C0.05)' stroke-width='1' fill='none'/%3E%3Cpolygon points='40%2C0 80%2C40 40%2C80 0%2C40' stroke='rgba(255%2C255%2C255%2C0.04)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
       color: var(--text-main);
       font-family: var(--font-main);
       min-height: 100vh;
@@ -46,18 +50,18 @@
       position: relative;
     }
 
-    /* Magic Hex Aura Animation */
+    /* Spider-Man Web & Hex Aura Animation */
     .magic-aura {
       position: fixed;
       pointer-events: none;
-      width: 320px;
-      height: 320px;
+      width: 380px;
+      height: 380px;
       border-radius: 50%;
-      background: radial-gradient(circle, var(--wanda-glow) 0%, transparent 70%);
-      filter: blur(40px);
+      background: radial-gradient(circle, rgba(230, 36, 41, 0.35) 0%, rgba(0, 119, 255, 0.2) 50%, transparent 70%);
+      filter: blur(50px);
       z-index: 0;
-      opacity: 0.55;
-      animation: floatAura 12s ease-in-out infinite alternate;
+      opacity: 0.6;
+      animation: floatAura 14s ease-in-out infinite alternate;
     }
 
     @keyframes floatAura {
@@ -839,7 +843,7 @@
     <header class="top-bar">
       <div class="badge-capsule red">
         <span>🩺</span>
-        <span>Mario &bull; 23 Años</span>
+        <span>Mario &bull; 24 Años</span>
       </div>
       <button class="audio-toggle-btn" id="btnBgmToggle" title="Escuchar Mon Laferte" onclick="toggleMonMusic()">
         🎵
@@ -857,13 +861,13 @@
 
       <div class="hero-tags">
         <span class="hero-tag">💉 El Enfermero Estrella</span>
+        <span class="hero-tag">🕷️ Sentido Arácnido & Marvel</span>
         <span class="hero-tag">⚔️ Respiración Solar</span>
-        <span class="hero-tag">🔮 Hechicero de Wanda / Marvel</span>
         <span class="hero-tag">♟️ Maestro de las Damas</span>
       </div>
 
       <button class="btn-celebrate" onclick="triggerCelebration()">
-        <span>🎉</span> ¡Toca para Celebrar tus 23! <span>✨</span>
+        <span>🎉</span> ¡Toca para Celebrar tus 24! <span>✨</span>
       </button>
     </section>
 
@@ -877,7 +881,7 @@
       </p>
       
       <div class="joke-quote">
-        "Y me dices 'niño' porque me llevas un año... ¡SOLO POR UN AÑO! No te creas tan sabio, viejito de 23 😂❤️."
+        "Y me dices 'niño' porque me llevas un año... ¡SOLO POR UN AÑO! No te creas tan sabio, viejito de 24 😂❤️."
       </div>
 
       <p class="card-p">
@@ -947,7 +951,7 @@
 
         <div class="polaroid" onclick="openLightbox('assets/photos/foto_5.jpeg')">
           <img src="assets/photos/foto_5.jpeg" alt="Mario Foto 5" loading="lazy">
-          <div class="polaroid-caption">¡Felices 23 años! ❤️</div>
+          <div class="polaroid-caption">¡Felices 24 años! ❤️</div>
         </div>
       </div>
     </article>
@@ -1051,7 +1055,7 @@
         </p>
         <br>
         <p>
-          Cumples 23 años. Admiro tu fuerza, tu vocación en la enfermería, tus ocurrencias y esa manera tan única que tienes de hacerme sonreír (incluso mintiéndome sobre tu nombre al inicio jajaja).
+          Cumples 24 años. Admiro tu fuerza, tu vocación en la enfermería, tus ocurrencias y esa manera tan única que tienes de hacerme sonreír (incluso mintiéndome sobre tu nombre al inicio jajaja).
         </p>
         <br>
         <p>
